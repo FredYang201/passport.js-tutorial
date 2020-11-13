@@ -2,4 +2,4 @@
 node_modules/
 
 # secret information
-config/key.js
+config/keys.js
