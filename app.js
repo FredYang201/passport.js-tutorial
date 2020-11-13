@@ -2,10 +2,13 @@ const express = require('express')
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
 
+const mongoose = require('mongoose');
+require('./models/user-model');
+
 // 导入的时候，会运行一遍代码， 因此有Google Strategy
 const passportSetup = require('./config/passport-setup');
 const { Strategy } = require('passport');
-const mongoose = require('mongoose');
+
 const keys = require('./config/keys')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
@@ -16,7 +19,6 @@ const app = express();
 mongoose.connect(keys.mongodb.dbURI,  { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('Connected to mongodb')
 })
-
 
 // set a view engine
 app.set('view engine', 'ejs')
