@@ -25,8 +25,8 @@ passport.use(
     // options for the google strategy for using google apis
     callbackURL: '/auth/google/redirect', // the url will be directed after user click 'Allow' button
     // callbackURL: 'https://fred-passport.herokuapp.com/auth/google/redirect',
-    clientID: keys.google.clientID,
-    clientSecret: keys.google.clientSecret,
+    clientID: process.env.clientID || keys.google.clientID,
+    clientSecret: process.env.clientSecret || keys.google.clientSecret,
     proxy: true
 }, async (accessToken, refreshToken, profile, done) => {
     // accessToken: the token from google
