@@ -16,7 +16,11 @@ const passport = require('passport')
 const app = express();
 
 // connect to online mongodb
-mongoose.connect(process.env.PROD_MONGODB || keys.mongodb.dbURI,  { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+var options = { 
+    useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 30000, keepAlive: 300000
+  };
+
+mongoose.connect(process.env.PROD_MONGODB || keys.mongodb.dbURI,  options , () => {
     console.log('Connected to mongodb')
 })
 
