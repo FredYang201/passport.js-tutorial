@@ -34,6 +34,7 @@ passport.use(
     // passport callback function, after get the code, which contains user profile information
     
     console.log('I am in google strategy...')
+    console.log(profile)
     User.findOne({googleId: profile.id}).then(currentUser => {
         if (currentUser) {
             // console.log('user is: ', currentUser)

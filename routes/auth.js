@@ -22,8 +22,8 @@ router.get('/logout', (req, res) => {
 // google is a strategy
 router.get('/google', passport.authenticate('google', {
     // scope 是想从google拿到的哪些字段，放到一个数组中
-    // scope: ['profile']
-    scope: ['https://www.googleapis.com/auth/userinfo.profile']
+    scope: ['profile']
+    // scope: ['https://www.googleapis.com/auth/userinfo.profile']
 }));
 
 // callback route for google to redirect to
