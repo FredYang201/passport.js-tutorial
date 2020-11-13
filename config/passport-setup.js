@@ -1,7 +1,11 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20');
 const keys = require('./keys')
-const User = require('../models/user-model');
+const mongoose = require('mongoose');
+
+const User = mongoose.model('user');
+
+// const User = require('../models/user-model');
 
 // 将对象的信息(id) => string (as a session)
 // done is a callback function
@@ -19,7 +23,6 @@ passport.deserializeUser((id, done) => {
 passport.use(
     new GoogleStrategy({
     // options for the google strategy for using google apis
-
     // callbackURL: '/auth/google/redirect', // the url will be directed after user click 'Allow' button
     callbackURL: 'https://fred-passport.herokuapp.com/auth/google/redirect',
     clientID: keys.google.clientID,
