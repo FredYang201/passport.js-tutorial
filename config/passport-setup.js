@@ -11,7 +11,7 @@ passport.serializeUser((user, done) => {
 
 // 由id 反序列化为user object
 passport.deserializeUser((id, done) => {
-    User.findById(id).then((user) => {
+    User.findById(id).then(user => {
         done(null, user)
     })
 })
@@ -35,9 +35,9 @@ passport.use(
     
     console.log('I am in google strategy...')
     console.log(profile)
-    User.findOne({googleId: profile.id}).then(currentUser => {
+    User.findOne({googleId: profile.id}, (error, currentUser) => {
         if (currentUser) {
-            // console.log('user is: ', currentUser)
+            console.log('user is: ', currentUser)
             done(null, currentUser)
         } else {
             new User({
@@ -45,7 +45,7 @@ passport.use(
                 googleId: profile.id
             }).save().then((newUser) => {
                 // newUser is a mongodb object
-                // console.log('new user created: ' + newUser)
+                console.log('new user created: ' + newUser)
                 done(null, newUser)
             });
         }
