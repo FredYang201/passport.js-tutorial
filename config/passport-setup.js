@@ -20,9 +20,9 @@ passport.deserializeUser((id, done) => {
 passport.use(
     new GoogleStrategy({
     // options for the google strategy for using google apis
-    
-    // callbackURL: '/auth/google/redirect', // the url will be directed after user click 'Allow' button
-    callbackURL: 'http://fred-passport.herokuapp.com/auth/google/redirect',
+
+    callbackURL: '/auth/google/redirect', // the url will be directed after user click 'Allow' button
+    // callbackURL: 'http://fred-passport.herokuapp.com/auth/google/redirect',
     clientID: keys.google.clientID,
     clientSecret: keys.google.clientSecret
 }, (accessToken, refreshToken, profile, done) => {

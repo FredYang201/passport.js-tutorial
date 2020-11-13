@@ -13,7 +13,7 @@ const passport = require('passport')
 const app = express();
 
 // connect to online mongodb
-mongoose.connect(keys.mongodb.dbURI,  { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(process.env.MONGODB_URI || keys.mongodb.dbURI,  { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('Connected to mongodb')
 })
 
@@ -43,6 +43,9 @@ app.get('/', (req, res) => {
     res.render('home', {user: req.user})
 })
 
+// app.listen(3000, () => {
+//     console.log('I am listening...')
+// })
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('I am listening...')
