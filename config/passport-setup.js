@@ -16,7 +16,7 @@ passport.deserializeUser((id, done) => {
     })
 })
 
-
+https://fred-passport.herokuapp.com/
 passport.use(
     new GoogleStrategy({
     // options for the google strategy for using google apis
