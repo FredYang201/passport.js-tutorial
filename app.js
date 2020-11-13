@@ -20,8 +20,9 @@ var options = {
     useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 30000, keepAlive: 300000
   };
 
-mongoose.connect(process.env.PROD_MONGODB || keys.mongodb.dbURI,  options , () => {
-    console.log('Connected to mongodb')
+const dbURI = process.env.PROD_MONGODB || keys.mongodb.dbURI
+mongoose.connect(dbURI,  options , () => {
+    console.log('Connected to mongodb: ' + dbURI)
 })
 
 // set a view engine
