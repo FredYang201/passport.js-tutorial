@@ -16,7 +16,6 @@ passport.deserializeUser((id, done) => {
     })
 })
 
-https://fred-passport.herokuapp.com/
 passport.use(
     new GoogleStrategy({
     // options for the google strategy for using google apis
@@ -32,8 +31,6 @@ passport.use(
     // profile: the profile infor retrieved from google, setting: scope
     // done: when will call this function, callback function
     // passport callback function, after get the code, which contains user profile information
-    
-    console.log('I am in google strategy...')
     console.log(profile)
     User.findOne({googleId: profile.id}, (error, currentUser) => {
         if (currentUser) {
