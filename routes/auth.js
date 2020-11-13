@@ -31,6 +31,7 @@ router.get('/google', passport.authenticate('google', {
 // and passport can access this information by req.user
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
     // res.send(req.user);
+    console.log('I am in auth google redirect')
     res.redirect('/profile/')
 })
 
