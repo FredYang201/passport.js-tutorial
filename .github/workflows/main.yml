@@ -54,5 +54,9 @@ jobs:
         echo "DEv is"
         cat ./Procfile
         
+    - name: List all files
+      run: |
+        ls .
+        
       
         
