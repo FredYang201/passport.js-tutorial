@@ -27,11 +27,11 @@ jobs:
 
     - name: Deploy production
       if: github.ref == 'refs/heads/master'
-      run: |
-        echo "result is"
-        cat ./Procfile
-        cp ./app.js ./Procfile
-        
+      uses: canastro/copy-file-action@master
+      with:
+        source: ./app.js
+        target: ./Profile
+ 
     - name: Development
       if: github.ref == 'refs/heads/dev'
       run: |
