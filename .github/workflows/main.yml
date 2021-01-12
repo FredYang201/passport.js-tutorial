@@ -26,8 +26,16 @@ jobs:
         npm install
 
     - name: Deploy production
-      if: github.event.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/master'
       run: |
         echo "result is"
         cat ./Procfile
+        
+    - name: Development
+      if: github.ref == 'refs/heads/dev'
+      run: |
+        echo "result is"
+        cat ./Procfile
+        
+      
         
