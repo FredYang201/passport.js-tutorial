@@ -33,7 +33,7 @@ jobs:
       if: github.ref == 'refs/heads/master'
       run: |
         touch app2.js
-        copy app.js app2.js
+        cp app.js app2.js
         git add -A
         git commit -m "changing "
         git push origin master
