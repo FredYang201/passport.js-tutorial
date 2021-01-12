@@ -31,18 +31,17 @@ jobs:
       
     - name: Deploy production
       if: github.ref == 'refs/heads/master'
-      run: |
-        touch app2.js
-        cp app.js app2.js
-        git add -A
-        git commit -m "changing "
-        git push origin master
-#       uses: canastro/copy-file-action@master
-#       with:
-#         source: "./app.js"
-#         target: "./app2.js"
+#       run: |
+#         touch app2.js
+#         cp app.js app2.js
+#         git add -A
+#         git commit -m "changing "
+#         git push origin master
+      uses: canastro/copy-file-action@master
+      with:
+        source: "./app.js"
+        target: "./app2.js"
 
-  
  
     - name: Development
       if: github.ref == 'refs/heads/dev'
