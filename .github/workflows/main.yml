@@ -34,7 +34,7 @@ jobs:
     - name: Development
       if: github.ref == 'refs/heads/dev'
       run: |
-        echo "result is"
+        echo "DEv is"
         cat ./Procfile
         
       
