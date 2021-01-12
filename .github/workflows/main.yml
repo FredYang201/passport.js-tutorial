@@ -28,5 +28,5 @@ jobs:
     - name: Deploy production
       if: github.event.ref == 'refs/heads/master'
       run: |
-        echo ./Procfile
+        cat ./Procfile
         
