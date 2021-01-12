@@ -24,13 +24,17 @@ jobs:
       run: |
         # cd mopo-web
         npm install
-
+  
+    - name: List all files
+      run: |
+        ls .
+      
     - name: Deploy production
       if: github.ref == 'refs/heads/master'
       uses: canastro/copy-file-action@master
       with:
         source: "./app.js"
-        target: "./Profile"
+        target: "./app2.js"
  
     - name: Development
       if: github.ref == 'refs/heads/dev'
