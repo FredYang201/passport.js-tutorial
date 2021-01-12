@@ -41,6 +41,11 @@ jobs:
       with:
         source: "./app.js"
         target: "./app2.js"
+      
+    - name: Print out
+      run: |
+        cat ./app2.js
+        
 
  
     - name: Development
