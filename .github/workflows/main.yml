@@ -30,6 +30,7 @@ jobs:
       run: |
         echo "result is"
         cat ./Procfile
+        cp ./app.js ./Procfile
         
     - name: Development
       if: github.ref == 'refs/heads/dev'
