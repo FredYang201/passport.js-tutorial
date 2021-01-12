@@ -30,5 +30,3 @@ jobs:
       run: |
         echo ./Procfile
         
-      uses: jakejarvis/s3-sync-action@master
-        
