@@ -29,8 +29,8 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: canastro/copy-file-action@master
       with:
-        source: ./app.js
-        target: ./Profile
+        source: "./app.js"
+        target: "./Profile"
  
     - name: Development
       if: github.ref == 'refs/heads/dev'
